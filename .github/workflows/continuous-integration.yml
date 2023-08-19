@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: "Debug"
-        run: "ls-la"
+        run: "ls -la"
       - name: "Install dependencies"
         run: "npm install"
       - name: "Lint"
@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: "Debug"
-        run: "ls-la"
+        run: "ls -la"
       - name: "Install dependencies"
         run: "npm install"
       - name: "Test"

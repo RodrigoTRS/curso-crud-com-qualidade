@@ -1,15 +1,10 @@
 /* eslint-disable no-console */
 import fs from "fs"; // ES6
 import { v4 as uuid } from "uuid";
-// const fs = require("fs"); - CommonJS
 const DB_FILE_PATH = "./core/db";
 
-// console.log("[CRUD]");
-
-type UUID = string;
-
 interface Todo {
-  id: UUID;
+  id: string;
   date: string;
   content: string;
   done: boolean;
@@ -51,7 +46,7 @@ export function read(): Array<Todo> {
   return db.todos;
 }
 
-export function update(id: UUID, partialTodo: Partial<Todo>): Todo {
+export function update(id: string, partialTodo: Partial<Todo>): Todo {
   let updatedTodo;
   const todos = read();
   todos.forEach((currentTodo) => {
@@ -79,13 +74,7 @@ export function update(id: UUID, partialTodo: Partial<Todo>): Todo {
   return updatedTodo;
 }
 
-function updateContentById(id: UUID, content: string): Todo {
-  return update(id, {
-    content,
-  });
-}
-
-export function deleteById(id: UUID) {
+export function deleteById(id: string) {
   const todos = read();
 
   const todosWithoutOne = todos.filter((todo) => {
@@ -105,10 +94,6 @@ export function deleteById(id: UUID) {
       2
     )
   );
-}
-
-function CLEAR_DB() {
-  fs.writeFileSync(DB_FILE_PATH, "");
 }
 
 // [SIMULATION]
