@@ -5,8 +5,8 @@ on:
     types: [opened, synchronize]
 
 jobs:
-    lint:
-      runs-on: ubuntu-latest
-      steps:
-        - name: "Lint"
-          run: "echo 'alo alo w brazil'"
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Lint"
+        run: "echo 'alo alo w brazil'"
