@@ -8,5 +8,10 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      - name: "Debug"
+        run: "ls-la"
+      - name: "Install dependencies"
+        run: "npm install"
       - name: "Lint"
-        run: "echo 'alo alo w brazil'"
+        run: "npm run lint"
