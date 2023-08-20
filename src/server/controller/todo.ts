@@ -25,6 +25,8 @@ async function get(req: NextApiRequest, res: NextApiResponse) {
     return;
   }
 
+  // Not needed
+
   const output = todoRepository.get({
     page,
     limit,
